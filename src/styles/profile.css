@@ -1,0 +1,126 @@
+.profile-page-wrap {
+  min-height: calc(100vh - 210px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 16px;
+  background: linear-gradient(135deg, #eef5ff 0%, #f5faff 100%);
+}
+
+.profile-page-card {
+  width: min(760px, 100%);
+  background: #ffffff;
+  border: 1px solid #d9e7fa;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 14px 34px rgba(14, 100, 187, 0.12);
+}
+
+.profile-page-head p {
+  margin: 0 0 6px;
+  color: #0e64bb;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profile-page-head h2 {
+  margin: 0;
+  color: #0b2240;
+}
+
+.profile-page-head span {
+  display: block;
+  margin-top: 8px;
+  color: #5f7087;
+  font-size: 14px;
+}
+
+.profile-message {
+  margin-top: 14px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+
+.profile-message.success {
+  background: #effaf2;
+  color: #1f6e34;
+  border: 1px solid #c9ebd3;
+}
+
+.profile-message.error {
+  background: #fff0ef;
+  color: #a52623;
+  border: 1px solid #ffd2d1;
+}
+
+.profile-message.info {
+  background: #edf5ff;
+  color: #0e64bb;
+  border: 1px solid #d8e7fd;
+}
+
+.profile-form {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #21364f;
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d4e2f5;
+  border-radius: 10px;
+  padding: 11px 12px;
+  font: inherit;
+  background: #f9fbff;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: #0e64bb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(14, 100, 187, 0.12);
+}
+
+.profile-form button {
+  margin-top: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #0e64bb;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profile-form button:hover:not(:disabled) {
+  background: #0c5198;
+}
+
+.profile-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+@media (max-width: 760px) {
+  .profile-page-wrap {
+    padding: 20px 12px;
+  }
+
+  .profile-page-card {
+    padding: 18px;
+  }
+}
