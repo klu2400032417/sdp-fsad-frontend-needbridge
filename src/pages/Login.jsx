@@ -97,25 +97,26 @@ export default function Login() {
       let res;
 
       if (role === "admin") {
-        res = await tryAdminLogin(identifier, password);
+  const res = await API.post("/adminapi/login", {
+    email: identifier,
+    password: password,
+  });
 
-        const payload = res?.data && typeof res.data === "object" ? res.data : {};
-        const adminData = payload.admin ?? payload;
+  const payload = res.data;
 
-        localStorage.setItem(
-          "user",
-          JSON.stringify({
-            role: "admin",
-            id: adminData?.username ?? identifier,
-            username: adminData?.username ?? identifier,
-            email: adminData?.email ?? identifier,
-            token: payload.token,
-            raw: res.data,
-          }),
-        );
-        navigate("/admin/dashboard");
-        return;
-      }
+  localStorage.setItem(
+    "user",
+    JSON.stringify({
+      role: "admin",
+      id: payload?.id,
+      email: payload?.email,
+      token: payload?.token,
+    })
+  );
+
+  navigate("/admin/dashboard");
+  return;
+}
 
       if (role === "logistics") {
         res = await API.post("/logisticsapi/login", { email, password });
